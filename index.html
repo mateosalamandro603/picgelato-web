@@ -3,873 +3,325 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Picgelato | Helado Ácido y Picante ⚡ PREVENTA</title>
-<meta name="description" content="Picgelato: helados explosivos entre ácido y picante. Arma tu helado interactivo y pide por WhatsApp. Preventa 22 al 25 de Septiembre.">
-
-<!-- Fonts & Tailwind CSS -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          lime: '#c6f000',
-          orange: '#ff9500',
-          yellow: '#ffd600',
-          black: '#0b0b0b',
-          purple: '#25105e',
-          red: '#e53b2e',
-          darkBg: '#08080a',
-          darkCard: '#121217',
-        },
-        fontFamily: {
-          anton: ['Anton', 'sans-serif'],
-          poppins: ['Poppins', 'sans-serif'],
-        },
-        boxShadow: {
-          'neo-lime': '5px 5px 0px 0px #c6f000',
-          'neo-orange': '5px 5px 0px 0px #ff9500',
-          'neo-yellow': '5px 5px 0px 0px #ffd600',
-          'neo-white': '5px 5px 0px 0px #ffffff',
-          'neo-lg-lime': '8px 8px 0px 0px #c6f000',
-          'neo-lg-orange': '8px 8px 0px 0px #ff9500',
-        }
-      }
-    }
-  }
-</script>
-
+<title>Picgelato | Helado entre ácido y picante</title>
+<meta name="description" content="Picgelato: helados entre ácido y picante. Preventa del 22 al 25 de septiembre.">
 <style>
-  body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #08080a;
-    color: #f8f8f5;
-    overflow-x: hidden;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700;800&display=swap');
 
-  .text-stroke-black {
-    -webkit-text-stroke: 2px #0b0b0b;
-  }
+:root{
+  --lime:#c6f000;
+  --orange:#ff9500;
+  --yellow:#ffd600;
+  --black:#0b0b0b;
+  --white:#f8f8f5;
+  --purple:#25105e;
+  --red:#e53b2e;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Poppins,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 10% 5%, rgba(198,240,0,.12), transparent 25%),
+    radial-gradient(circle at 90% 20%, rgba(255,149,0,.12), transparent 25%),
+    var(--black);
+  color:var(--white);
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
 
-  .neon-glow-lime {
-    filter: drop-shadow(0px 0px 12px rgba(198, 240, 0, 0.6));
-  }
-  
-  .neon-glow-orange {
-    filter: drop-shadow(0px 0px 12px rgba(255, 149, 0, 0.6));
-  }
+header{
+  min-height:92vh;
+  display:flex;align-items:center;
+  position:relative;overflow:hidden;
+  border-bottom:3px solid var(--lime);
+}
+header:before,header:after{
+  content:"";position:absolute;border-radius:50%;filter:blur(2px);opacity:.9
+}
+header:before{width:420px;height:420px;background:rgba(198,240,0,.08);left:-160px;top:-120px}
+header:after{width:380px;height:380px;background:rgba(255,149,0,.08);right:-130px;bottom:-100px}
 
-  /* Custom Scrollbar */
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #0b0b0b;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #c6f000;
-    border-radius: 4px;
-  }
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;position:relative;z-index:1}
+.badge{
+  display:inline-block;background:var(--lime);color:#111;font-weight:800;
+  padding:8px 16px;border-radius:999px;transform:rotate(-2deg);
+  box-shadow:5px 5px 0 var(--orange);
+}
+h1{
+  font-family:Anton,Impact,sans-serif;font-size:clamp(4rem,10vw,8.5rem);
+  line-height:.86;margin:24px 0 14px;letter-spacing:1px;
+  text-transform:uppercase;
+  background:linear-gradient(90deg,var(--lime),var(--yellow),var(--orange));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero h2{font-size:clamp(1.1rem,2vw,1.6rem);margin:0 0 20px}
+.hero p{color:#d6d6d6;max-width:650px;font-size:1.05rem;line-height:1.7}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.btn{
+  padding:14px 21px;border-radius:14px;font-weight:800;display:inline-block;
+  transition:.2s transform,.2s box-shadow;
+}
+.btn:hover{transform:translateY(-3px)}
+.btn-primary{background:var(--lime);color:#111;box-shadow:0 0 0 2px #111,6px 6px 0 var(--orange)}
+.btn-secondary{border:2px solid var(--orange);color:var(--white)}
 
-  /* Animations */
-  @keyframes floatSlow {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-12px) rotate(3deg); }
-  }
+.hero-art{
+  min-height:430px;border:2px solid rgba(198,240,0,.6);border-radius:40px;
+  display:grid;place-items:center;position:relative;
+  background:linear-gradient(145deg,#111,#050505);
+  box-shadow:0 0 45px rgba(198,240,0,.08);
+}
+.scoop{font-size:7rem;filter:drop-shadow(0 12px 0 rgba(0,0,0,.6))}
+.bolt{position:absolute;font-size:6rem;color:var(--yellow);transform:rotate(12deg);top:55px;right:60px;text-shadow:5px 5px 0 var(--orange)}
+.drip{
+  position:absolute;bottom:45px;left:45px;right:45px;height:55px;
+  border-radius:0 0 35px 35px;background:linear-gradient(90deg,var(--lime),var(--orange));
+  opacity:.95
+}
 
-  @keyframes pulseGlow {
-    0%, 100% { opacity: 0.8; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.05); }
-  }
+section{padding:82px 0}
+.section-title{text-align:center;margin-bottom:42px}
+.kicker{color:var(--orange);font-weight:800;text-transform:uppercase;letter-spacing:2px}
+h2.title{font-family:Anton,Impact,sans-serif;font-size:clamp(2.3rem,6vw,4rem);margin:8px 0;color:var(--lime)}
+.section-title p{color:#bbb;max-width:700px;margin:auto}
 
-  @keyframes drip {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(100%); }
-  }
+.preventa{
+  background:linear-gradient(120deg,var(--lime),var(--yellow) 48%,var(--orange));
+  color:#111;border-radius:28px;padding:35px;
+  box-shadow:10px 10px 0 #111,0 0 0 3px var(--lime);
+  display:flex;justify-content:space-between;gap:25px;align-items:center;
+}
+.preventa h2{font-family:Anton;font-size:3rem;margin:0 0 8px;text-transform:uppercase}
+.preventa p{margin:0;font-weight:600}
+.date{font-size:1.25rem;font-weight:900;background:#111;color:white;padding:14px 18px;border-radius:14px;white-space:nowrap}
 
-  .animate-float {
-    animation: floatSlow 4s ease-in-out infinite;
-  }
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{
+  background:#111;border:2px solid #292929;border-radius:24px;padding:25px;
+  position:relative;overflow:hidden;
+}
+.card:after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;background:var(--lime);opacity:.08;right:-60px;top:-60px}
+.card:nth-child(2):after{background:var(--orange)}
+.card:nth-child(3):after{background:var(--yellow)}
+.card h3{font-family:Anton;font-size:2rem;margin:0 0 14px;color:var(--orange);letter-spacing:.5px}
+.card:nth-child(2) h3{color:var(--lime)}
+.card:nth-child(3) h3{color:var(--yellow)}
+.card ul{padding-left:20px;line-height:1.8;color:#ddd}
+.tag{display:inline-block;padding:6px 10px;border-radius:8px;background:#202020;color:var(--lime);font-size:.8rem;font-weight:800}
 
-  .animate-pulse-glow {
-    animation: pulseGlow 2.5s infinite;
-  }
+.flavors-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.flavors-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.flavor{
+  border-radius:20px;padding:24px 16px;text-align:center;background:#f4f1e9;color:#111;
+  border-bottom:7px solid var(--lime)
+}
+.flavor:nth-child(2){border-bottom-color:var(--orange)}
+.flavor:nth-child(3){border-bottom-color:#e84242}
+.flavor:nth-child(4){border-bottom-color:var(--yellow)}
+.flavor .emoji{font-size:3rem}
+.flavor h3{margin:8px 0 4px}
+.flavor p{font-size:.88rem;margin:0;color:#444}
 
-  /* Custom radio check style */
-  .custom-checkbox:checked + label {
-    background-color: #c6f000;
-    color: #0b0b0b;
-    border-color: #c6f000;
-    box-shadow: 4px 4px 0px #ff9500;
-  }
+.prices{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:760px;margin:0 auto}
+.price{
+  padding:28px;border-radius:24px;background:#121212;border:2px solid #303030;text-align:center;
+}
+.price h3{font-size:1.25rem;margin:0;color:#ccc}
+.old{font-size:1rem;color:#777;text-decoration:line-through;margin-top:10px}
+.new{font-family:Anton;font-size:4rem;color:var(--lime);line-height:1;margin-top:4px}
+.price:nth-child(2) .new{color:var(--orange)}
+.price small{color:#aaa}
 
-  .custom-radio:checked + label {
-    background-color: #ff9500;
-    color: #0b0b0b;
-    border-color: #ff9500;
-    box-shadow: 4px 4px 0px #c6f000;
-  }
+.info{
+  display:grid;grid-template-columns:1fr 1fr;gap:22px
+}
+.info-box{padding:28px;border-radius:22px;background:#111;border:1px solid #333}
+.info-box h3{color:var(--lime);margin-top:0}
+.info-box:nth-child(2) h3{color:var(--orange)}
+.info-box p{color:#ccc;line-height:1.7}
+.contact{
+  text-align:center;padding:55px 20px;border-radius:30px;
+  background:linear-gradient(135deg,#171717,#0c0c0c);border:2px solid #292929
+}
+.contact h2{font-family:Anton;font-size:3rem;margin:0 0 10px}
+.contact strong{color:var(--lime)}
+.contact .number{font-size:clamp(1.5rem,4vw,2.3rem);font-weight:900;margin:12px 0}
 
-  /* Canvas styling */
-  #particles-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-  }
+footer{border-top:1px solid #292929;padding:28px 0;text-align:center;color:#888}
+footer b{color:var(--lime)}
+
+@media(max-width:850px){
+  .hero{grid-template-columns:1fr}
+  .hero-art{min-height:330px}
+  .cards{grid-template-columns:1fr}
+  .flavors-3,.flavors-4{grid-template-columns:1fr 1fr}
+  .preventa{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:520px){
+  section{padding:55px 0}
+  .flavors-3,.flavors-4,.prices,.info{grid-template-columns:1fr}
+  .hero-art{min-height:270px}
+  .scoop{font-size:5rem}.bolt{font-size:4rem;right:30px;top:30px}
+  h1{font-size:4.6rem}
+}
 </style>
 </head>
-<body class="selection:bg-lime selection:text-black">
+<body>
 
-<canvas id="particles-canvas"></canvas>
-
-<nav class="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b-4 border-lime px-4 py-3">
-  <div class="max-w-6xl mx-auto flex justify-between items-center">
-    <a href="#" class="flex items-center gap-2 group">
-      <span class="font-anton text-3xl sm:text-4xl text-lime tracking-wider group-hover:text-orange transition-colors">PICGELATO</span>
-      <span class="bg-orange text-black font-extrabold text-xs px-2 py-0.5 rounded-full rotate-12 group-hover:rotate-0 transition-transform">⚡ ÁCIDO</span>
-    </a>
-    <div class="flex items-center gap-3">
-      <a href="#builder" class="hidden sm:inline-block bg-lime text-black font-extrabold px-4 py-2 rounded-xl text-sm border-2 border-black shadow-neo-orange hover:-translate-y-0.5 active:translate-y-0 transition-all">
-        🛠️ ARMA TU HELADO
-      </a>
-      <a href="https://wa.me/573163895608?text=Hola%20Picgelato%2C%20quiero%20hacer%20un%20pedido%20de%20preventa." target="_blank" class="bg-orange text-black font-extrabold px-4 py-2 rounded-xl text-sm border-2 border-black shadow-neo-lime hover:-translate-y-0.5 active:translate-y-0 transition-all">
-        📲 PEDIR
-      </a>
-    </div>
-  </div>
-</nav>
-
-<header class="relative overflow-hidden py-12 md:py-20 border-b-4 border-orange bg-gradient-to-b from-darkBg via-purple/20 to-darkBg">
-  <div class="max-w-6xl mx-auto px-4 relative z-10 grid md:grid-cols-12 gap-8 items-center">
-    
-    <div class="md:col-span-7 space-y-6 text-center md:text-left">
-      <div class="inline-flex items-center gap-2 bg-yellow text-black font-extrabold px-4 py-1.5 rounded-full text-xs sm:text-sm border-2 border-black shadow-neo-lime uppercase tracking-wider transform -rotate-1">
-        <span>⚡ PREVENTA ESPECIAL</span>
-        <span class="bg-red text-white px-2 py-0.5 rounded-full text-xs">22 - 25 SEPT</span>
-      </div>
-
-      <h1 class="font-anton text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-none uppercase tracking-tight">
-        HELADO <br>
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-lime via-yellow to-orange neon-glow-lime">ENTRE ÁCIDO</span> <br>
-        <span class="text-orange underline decoration-lime decoration-wavy decoration-4">Y PICANTE</span>
-      </h1>
-
-      <p class="text-gray-300 text-lg sm:text-xl font-medium max-w-xl leading-relaxed">
-        Una explosión sensorial extrema. Combina helados cremosos con perlas explosivas <span class="text-lime font-bold">Popping Boba</span>, chamoy, Tajín y dulces mexicanos picantes.
-      </p>
-
-      <!-- Countdown Timer Banner -->
-      <div class="bg-darkCard border-2 border-lime rounded-2xl p-4 shadow-neo-orange max-w-lg">
-        <div class="text-lime font-bold text-xs uppercase tracking-widest mb-2 flex items-center justify-center md:justify-start gap-2">
-          <span class="w-2 h-2 rounded-full bg-red animate-ping"></span>
-          Tiempo restante de Preventa Especial:
-        </div>
-        <div class="grid grid-cols-4 gap-2 text-center" id="countdown">
-          <div class="bg-black/60 p-2 rounded-lg border border-lime/30">
-            <span id="cd-days" class="font-anton text-2xl sm:text-3xl text-yellow">00</span>
-            <span class="block text-[10px] text-gray-400 uppercase">Días</span>
-          </div>
-          <div class="bg-black/60 p-2 rounded-lg border border-lime/30">
-            <span id="cd-hours" class="font-anton text-2xl sm:text-3xl text-lime">00</span>
-            <span class="block text-[10px] text-gray-400 uppercase">Horas</span>
-          </div>
-          <div class="bg-black/60 p-2 rounded-lg border border-lime/30">
-            <span id="cd-minutes" class="font-anton text-2xl sm:text-3xl text-orange">00</span>
-            <span class="block text-[10px] text-gray-400 uppercase">Min</span>
-          </div>
-          <div class="bg-black/60 p-2 rounded-lg border border-lime/30">
-            <span id="cd-seconds" class="font-anton text-2xl sm:text-3xl text-red">00</span>
-            <span class="block text-[10px] text-gray-400 uppercase">Seg</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex flex-wrap gap-4 justify-center md:justify-start pt-2">
-        <a href="#builder" class="bg-lime hover:bg-lime/90 text-black font-extrabold text-lg px-8 py-4 rounded-2xl border-4 border-black shadow-neo-orange hover:-translate-y-1 transition-all flex items-center gap-2">
-          <span>🍧 CREAR MI PICGELATO</span>
-        </a>
-        <a href="#combos" class="bg-transparent hover:bg-white/5 text-white font-extrabold text-lg px-6 py-4 rounded-2xl border-2 border-orange shadow-neo-lime hover:-translate-y-1 transition-all">
-          🔥 VER COMBOS
-        </a>
+<header>
+  <div class="container hero">
+    <div>
+      <span class="badge">⚡ PREVENTA • 22–25 SEPTIEMBRE</span>
+      <h1>Picgelato</h1>
+      <h2>HELADO ENTRE <span style="color:var(--lime)">ÁCIDO</span> Y <span style="color:var(--orange)">PICANTE</span></h2>
+      <p>Un helado diferente, refrescante y lleno de sabor. Combina tu helado con toppings, gomitas, popping boba y dulces para crear tu propia experiencia Picgelato.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://wa.me/573163895608?text=Hola%20Picgelato%2C%20quiero%20hacer%20una%20preventa." target="_blank">📲 Pedir por WhatsApp</a>
+        <a class="btn btn-secondary" href="#menu">Ver menú ↓</a>
       </div>
     </div>
-
-    <!-- Interactive Hero Scoop Graphic -->
-    <div class="md:col-span-5 flex justify-center relative">
-      <div class="w-full max-w-sm aspect-square bg-gradient-to-tr from-purple/80 to-black border-4 border-lime rounded-3xl p-6 relative flex flex-col items-center justify-center shadow-[0_0_50px_rgba(198,240,0,0.2)] animate-float">
-        <div class="absolute -top-6 -right-6 bg-yellow text-black font-anton text-xl px-4 py-2 rounded-xl border-2 border-black rotate-12 shadow-neo-orange">
-          ¡EXPLOSIVO!
-        </div>
-        <div class="text-8xl sm:text-9xl mb-2 filter drop-shadow-[0_15px_15px_rgba(0,0,0,0.8)] hover:scale-110 transition-transform cursor-pointer" id="hero-emoji">
-          🍧
-        </div>
-        <div class="flex gap-2 mb-4">
-          <span class="bg-lime text-black font-black text-xs px-3 py-1 rounded-full border border-black">🌶️ Chamoy</span>
-          <span class="bg-orange text-black font-black text-xs px-3 py-1 rounded-full border border-black">🫐 Boba</span>
-          <span class="bg-yellow text-black font-black text-xs px-3 py-1 rounded-full border border-black">🍬 Tajín</span>
-        </div>
-        <p class="text-center font-bold text-sm text-gray-300">
-          "El helado que te hace agua la boca y encenderá tus sentidos."
-        </p>
-      </div>
+    <div class="hero-art" aria-label="Ilustración decorativa de helado">
+      <div class="bolt">⚡</div>
+      <div class="scoop">🍦</div>
+      <div class="drip"></div>
     </div>
-
   </div>
 </header>
 
-<section id="builder" class="py-16 bg-black relative border-b-4 border-lime">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="text-center mb-12">
-      <span class="text-orange font-black uppercase tracking-widest text-sm bg-orange/10 px-4 py-1.5 rounded-full border border-orange/30">
-        Personalización en tiempo real
-      </span>
-      <h2 class="font-anton text-4xl sm:text-6xl text-lime mt-3">ARMA TU PICGELATO 🛠️</h2>
-      <p class="text-gray-400 max-w-2xl mx-auto">Selecciona tu tamaño, combina los helados, agrega perlas explosivas y elige tus toppings picantes o ácidos favoritos.</p>
+<main class="container">
+
+<section>
+  <div class="preventa">
+    <div>
+      <h2>🔥 PREVENTA</h2>
+      <p>Precio especial por tiempo limitado para nuestra feria empresarial.</p>
     </div>
+    <div class="date">22 → 25 SEP</div>
+  </div>
+</section>
 
-    <div class="grid lg:grid-cols-12 gap-8 items-start">
-      
-      <!-- Builder Controls (Left Side) -->
-      <div class="lg:col-span-7 bg-darkCard border-2 border-lime/40 rounded-3xl p-6 space-y-8 shadow-neo-lime">
-        
-        <!-- Step 1: Size -->
-        <div>
-          <h3 class="font-anton text-2xl text-yellow flex items-center gap-2 mb-4">
-            <span class="bg-yellow text-black text-sm w-7 h-7 rounded-full flex items-center justify-center font-extrabold">1</span>
-            ELIGE EL TAMAÑO
-          </h3>
-          <div class="grid grid-cols-2 gap-4">
-            <div>
-              <input type="radio" id="size-1" name="builder-size" value="1" class="hidden custom-radio" checked onchange="updateBuilder()">
-              <label for="size-1" class="block bg-black/60 border-2 border-gray-700 rounded-2xl p-4 text-center cursor-pointer hover:border-orange transition-all">
-                <span class="font-anton text-2xl block text-white">PEQUEÑO</span>
-                <span class="text-lime font-black text-xl block">$5.000</span>
-                <span class="text-xs text-gray-400 font-medium">1 Bola de Helado</span>
-              </label>
-            </div>
-            <div>
-              <input type="radio" id="size-2" name="builder-size" value="2" class="hidden custom-radio" onchange="updateBuilder()">
-              <label for="size-2" class="block bg-black/60 border-2 border-gray-700 rounded-2xl p-4 text-center cursor-pointer hover:border-orange transition-all">
-                <span class="font-anton text-2xl block text-white">GRANDE</span>
-                <span class="text-orange font-black text-xl block">$7.000</span>
-                <span class="text-xs text-gray-400 font-medium">2 Bolas de Helado</span>
-              </label>
-            </div>
-          </div>
-        </div>
+<section id="menu">
+  <div class="section-title">
+    <div class="kicker">Nuestro menú</div>
+    <h2 class="title">ELIGE TU PICGELATO</h2>
+    <p>Arma tu combinación y dale algo ácido a tu día.</p>
+  </div>
 
-        <!-- Step 2: Flavors -->
-        <div>
-          <h3 class="font-anton text-2xl text-lime flex items-center gap-2 mb-2">
-            <span class="bg-lime text-black text-sm w-7 h-7 rounded-full flex items-center justify-center font-extrabold">2</span>
-            SABORES DE HELADO
-          </h3>
-          <p class="text-xs text-gray-400 mb-3" id="flavor-limit-note">Selecciona 1 sabor:</p>
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <div>
-              <input type="checkbox" id="flavor-lulo" value="Lulo" class="hidden custom-checkbox flavor-cb" onchange="handleFlavorChange(this)">
-              <label for="flavor-lulo" class="block bg-black/60 border-2 border-gray-700 rounded-xl p-3 text-center cursor-pointer hover:border-lime transition-all">
-                <span class="text-2xl block mb-1">🍈</span>
-                <span class="font-bold text-sm block">Lulo</span>
-              </label>
-            </div>
-            <div>
-              <input type="checkbox" id="flavor-maracuya" value="Maracuyá" class="hidden custom-checkbox flavor-cb" onchange="handleFlavorChange(this)">
-              <label for="flavor-maracuya" class="block bg-black/60 border-2 border-gray-700 rounded-xl p-3 text-center cursor-pointer hover:border-lime transition-all">
-                <span class="text-2xl block mb-1">🥭</span>
-                <span class="font-bold text-sm block">Maracuyá</span>
-              </label>
-            </div>
-            <div>
-              <input type="checkbox" id="flavor-naranja" value="Naranja" class="hidden custom-checkbox flavor-cb" onchange="handleFlavorChange(this)">
-              <label for="flavor-naranja" class="block bg-black/60 border-2 border-gray-700 rounded-xl p-3 text-center cursor-pointer hover:border-lime transition-all">
-                <span class="text-2xl block mb-1">🍊</span>
-                <span class="font-bold text-sm block">Naranja</span>
-              </label>
-            </div>
-            <div>
-              <input type="checkbox" id="flavor-sandia" value="Sandía Sour" class="hidden custom-checkbox flavor-cb" onchange="handleFlavorChange(this)">
-              <label for="flavor-sandia" class="block bg-black/60 border-2 border-gray-700 rounded-xl p-3 text-center cursor-pointer hover:border-lime transition-all">
-                <span class="text-2xl block mb-1">🍉</span>
-                <span class="font-bold text-sm block">Sandía Sour</span>
-              </label>
-            </div>
-          </div>
-        </div>
+  <div class="cards">
+    <article class="card">
+      <span class="tag">EL MEXICANO</span>
+      <h3>🌶️ Ácido + picante</h3>
+      <ul>
+        <li>Helado</li><li>Popping boba (sabor blueberry)</li><li>Chamoy</li>
+        <li>Tajín</li><li>Pulparindo</li><li>Rellenitos</li>
+      </ul>
+      <strong>Elige 2 dulces mexicanos.</strong>
+    </article>
 
-        <!-- Step 3: Popping Boba -->
-        <div>
-          <h3 class="font-anton text-2xl text-orange flex items-center gap-2 mb-3">
-            <span class="bg-orange text-black text-sm w-7 h-7 rounded-full flex items-center justify-center font-extrabold">3</span>
-            PERLAS POPPING BOBA
-          </h3>
-          <div class="grid grid-cols-3 gap-3">
-            <div>
-              <input type="checkbox" id="boba-blue" value="Blueberry" class="hidden custom-checkbox boba-cb" onchange="updateBuilder()">
-              <label for="boba-blue" class="block bg-black/60 border-2 border-gray-700 rounded-xl p-3 text-center cursor-pointer hover:border-orange transition-all">
-                <span class="text-2xl block mb-1">🫐</span>
-                <span class="font-bold text-xs block">Blueberry</span>
-              </label>
-            </div>
-            <div>
-              <input type="checkbox" id="boba-mango" value="Mango Biche" class="hidden custom-checkbox boba-cb" onchange="updateBuilder()">
-              <label for="boba-mango" class="block bg-black/60 border-2 border-gray-700 rounded-xl p-3 text-center cursor-pointer hover:border-orange transition-all">
-                <span class="text-2xl block mb-1">🥭</span>
-                <span class="font-bold text-xs block">Mango Biche</span>
-              </label>
-            </div>
-            <div>
-              <input type="checkbox" id="boba-apple" value="Manzana Verde" class="hidden custom-checkbox boba-cb" onchange="updateBuilder()">
-              <label for="boba-apple" class="block bg-black/60 border-2 border-gray-700 rounded-xl p-3 text-center cursor-pointer hover:border-orange transition-all">
-                <span class="text-2xl block mb-1">🍏</span>
-                <span class="font-bold text-xs block">Manzana Verde</span>
-              </label>
-            </div>
-          </div>
-        </div>
+    <article class="card">
+      <span class="tag">EL EXCLUSIVO</span>
+      <h3>🍊 Una explosión</h3>
+      <ul>
+        <li>Helado</li><li>Popping boba (sabor mango biche)</li><li>Gomitas</li>
+        <li>Chamoy</li><li>Tajín</li><li>Polvo ácido de Revolcón</li>
+      </ul>
+      <strong>Elige 1 dulce mexicano favorito.</strong>
+    </article>
 
-        <!-- Step 4: Toppings & Dulces -->
-        <div>
-          <h3 class="font-anton text-2xl text-red flex items-center gap-2 mb-3">
-            <span class="bg-red text-white text-sm w-7 h-7 rounded-full flex items-center justify-center font-extrabold">4</span>
-            TOPPINGS Y DULCES MEXICANOS
-          </h3>
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            <div>
-              <input type="checkbox" id="top-chamoy" value="Chamoy" class="hidden custom-checkbox top-cb" checked onchange="updateBuilder()">
-              <label for="top-chamoy" class="block bg-black/60 border-2 border-gray-700 rounded-xl p-2.5 text-center cursor-pointer hover:border-red transition-all">
-                <span class="font-bold text-xs">🌶️ Chamoy</span>
-              </label>
-            </div>
-            <div>
-              <input type="checkbox" id="top-tajin" value="Tajín" class="hidden custom-checkbox top-cb" checked onchange="updateBuilder()">
-              <label for="top-tajin" class="block bg-black/60 border-2 border-gray-700 rounded-xl p-2.5 text-center cursor-pointer hover:border-red transition-all">
-                <span class="font-bold text-xs">🔥 Tajín</span>
-              </label>
-            </div>
-            <div>
-              <input type="checkbox" id="top-gomitas" value="Gomitas Ácidas" class="hidden custom-checkbox top-cb" onchange="updateBuilder()">
-              <label for="top-gomitas" class="block bg-black/60 border-2 border-gray-700 rounded-xl p-2.5 text-center cursor-pointer hover:border-red transition-all">
-                <span class="font-bold text-xs">🍬 Gomitas</span>
-              </label>
-            </div>
-            <div>
-              <input type="checkbox" id="top-pulparindo" value="Pulparindo" class="hidden custom-checkbox top-cb" onchange="updateBuilder()">
-              <label for="top-pulparindo" class="block bg-black/60 border-2 border-gray-700 rounded-xl p-2.5 text-center cursor-pointer hover:border-red transition-all">
-                <span class="font-bold text-xs">🇲🇽 Pulparindo</span>
-              </label>
-            </div>
-            <div>
-              <input type="checkbox" id="top-rellenitos" value="Rellenitos" class="hidden custom-checkbox top-cb" onchange="updateBuilder()">
-              <label for="top-rellenitos" class="block bg-black/60 border-2 border-gray-700 rounded-xl p-2.5 text-center cursor-pointer hover:border-red transition-all">
-                <span class="font-bold text-xs">🍭 Rellenitos</span>
-              </label>
-            </div>
-            <div>
-              <input type="checkbox" id="top-revolcon" value="Polvo Revolcón" class="hidden custom-checkbox top-cb" onchange="updateBuilder()">
-              <label for="top-revolcon" class="block bg-black/60 border-2 border-gray-700 rounded-xl p-2.5 text-center cursor-pointer hover:border-red transition-all">
-                <span class="font-bold text-xs">⚡ Polvo Ácido</span>
-              </label>
-            </div>
-          </div>
-        </div>
+    <article class="card">
+      <span class="tag">EL SAMMY ESPECIAL</span>
+      <h3>⭐ El más completo</h3>
+      <ul>
+        <li>Helado</li><li>Popping boba (3 sabores)</li><li>Gomitas</li>
+        <li>Chamoy</li><li>Tajín</li><li>Polvo ácido de Revolcón</li>
+        <li>Bombom Boom de Tajín</li>
+      </ul>
+    </article>
+  </div>
+</section>
 
-      </div>
+<section>
+  <div class="section-title">
+    <div class="kicker">Sabores de helado</div>
+    <h2 class="title">ESCOGE TU SABOR</h2>
+  </div>
+  <div class="flavors-3">
+    <div class="flavor"><div class="emoji">🍋</div><h3>Lulo</h3><p>Cremoso, fresco y ácido.</p></div>
+    <div class="flavor"><div class="emoji">🥭</div><h3>Maracuyá</h3><p>Frutal y refrescante.</p></div>
+    <div class="flavor"><div class="emoji">🍊</div><h3>Naranja</h3><p>Ácida y llena de energía.</p></div>
+  </div>
+</section>
 
-      <!-- Live Preview Box (Right Side) -->
-      <div class="lg:col-span-5 bg-gradient-to-b from-purple/40 to-darkCard border-4 border-yellow rounded-3xl p-6 sticky top-24 shadow-neo-yellow">
-        <div class="text-center pb-4 border-b border-gray-800">
-          <span class="bg-yellow text-black font-extrabold text-xs px-3 py-1 rounded-full uppercase">Resumen de tu Creación</span>
-          <h3 class="font-anton text-3xl text-lime mt-2">TU PICGELATO</h3>
-        </div>
+<section>
+  <div class="section-title">
+    <div class="kicker">Popping boba</div>
+    <h2 class="title">PERLAS EXPLOSIVAS</h2>
+  </div>
+  <div class="flavors-4">
+    <div class="flavor"><div class="emoji">🫐</div><h3>Blueberry</h3><p>Sabor intenso y dulce.</p></div>
+    <div class="flavor"><div class="emoji">🥭</div><h3>Mango biche</h3><p>El toque ácido perfecto.</p></div>
+    <div class="flavor"><div class="emoji">🍏</div><h3>Manzana verde</h3><p>Fresca y explosiva.</p></div>
+    <div class="flavor"><div class="emoji">🍬</div><h3>Gomitas</h3><p>Gusanitos, aros y polvo ácido.</p></div>
+  </div>
+</section>
 
-        <div class="py-6 flex flex-col items-center justify-center relative min-h-[200px]">
-          <div class="relative text-center">
-            <div id="preview-scoops" class="text-7xl mb-2 transition-all transform hover:scale-110">
-              🍨
-            </div>
-            <div id="preview-badge" class="inline-block bg-lime text-black font-extrabold px-3 py-1 rounded-full text-xs shadow-md">
-              1 Bola Seleccionada
-            </div>
-          </div>
-        </div>
-
-        <div class="space-y-3 bg-black/60 p-4 rounded-2xl border border-gray-800 text-sm">
-          <div class="flex justify-between border-b border-gray-800 pb-2">
-            <span class="text-gray-400">Tamaño:</span>
-            <span id="summary-size" class="font-bold text-white">Pequeño (1 Bola)</span>
-          </div>
-          <div class="flex justify-between border-b border-gray-800 pb-2">
-            <span class="text-gray-400">Sabores:</span>
-            <span id="summary-flavors" class="font-bold text-lime">Ninguno seleccionado</span>
-          </div>
-          <div class="flex justify-between border-b border-gray-800 pb-2">
-            <span class="text-gray-400">Popping Boba:</span>
-            <span id="summary-boba" class="font-bold text-orange">Sin perlas</span>
-          </div>
-          <div class="flex justify-between pb-1">
-            <span class="text-gray-400">Toppings:</span>
-            <span id="summary-toppings" class="font-bold text-yellow">Chamoy, Tajín</span>
-          </div>
-        </div>
-
-        <div class="mt-6 pt-4 border-t border-gray-800 flex items-center justify-between">
-          <div>
-            <span class="text-xs text-gray-400 block uppercase font-bold">Total a Pagar:</span>
-            <span id="summary-total" class="font-anton text-4xl text-lime">$5.000</span>
-          </div>
-          <button onclick="sendCustomOrder()" class="bg-lime hover:bg-lime/90 text-black font-extrabold px-6 py-3 rounded-2xl border-2 border-black shadow-neo-orange hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center gap-2">
-            <span>📲 PEDIR YA</span>
-          </button>
-        </div>
-      </div>
-
+<section>
+  <div class="section-title">
+    <div class="kicker">Preventa</div>
+    <h2 class="title">PRECIO ESPECIAL</h2>
+    <p>Promoción válida únicamente del <b>22 al 25 de septiembre de 2026</b>.</p>
+  </div>
+  <div class="prices">
+    <div class="price">
+      <h3>PEQUEÑO • 1 BOLA</h3>
+      <div class="old">$6.000</div>
+      <div class="new">$5.000</div>
+      <small>Precio de preventa</small>
+    </div>
+    <div class="price">
+      <h3>GRANDE • 2 BOLAS</h3>
+      <div class="old">$8.000</div>
+      <div class="new">$7.000</div>
+      <small>Precio de preventa</small>
     </div>
   </div>
 </section>
 
-<section id="combos" class="py-16 bg-darkBg border-b-4 border-orange">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="text-center mb-10">
-      <span class="text-lime font-black uppercase tracking-widest text-sm bg-lime/10 px-4 py-1.5 rounded-full border border-lime/30">
-        Combinaciones Recomendadas
-      </span>
-      <h2 class="font-anton text-4xl sm:text-6xl text-orange mt-3">COMBOS SIGNATURE 🔥</h2>
-      <p class="text-gray-400 max-w-xl mx-auto">¿No sabes qué armar? Pruebas nuestras recetas exclusivas creadas para el máximo sabor.</p>
+<section>
+  <div class="info">
+    <div class="info-box">
+      <h3>🍭 DULCES Y TOPPINGS</h3>
+      <p>Elige entre popping boba, gomitas, chamoy, Tajín, Pulparindo, Rellenitos, polvo ácido de Revolcón y Bombom Boom de Tajín, según la combinación.</p>
     </div>
-
-    <!-- Filter Tabs -->
-    <div class="flex justify-center gap-2 mb-10 overflow-x-auto pb-2">
-      <button onclick="filterMenu('all')" class="menu-tab bg-lime text-black font-extrabold px-5 py-2.5 rounded-xl border-2 border-black shadow-neo-orange text-sm whitespace-nowrap">
-        🌟 TODOS LOS COMBOS
-      </button>
-      <button onclick="filterMenu('mexicano')" class="menu-tab bg-darkCard text-white font-extrabold px-5 py-2.5 rounded-xl border-2 border-gray-700 hover:border-lime text-sm whitespace-nowrap">
-        🇲🇽 EL MEXICANO
-      </button>
-      <button onclick="filterMenu('exclusivo')" class="menu-tab bg-darkCard text-white font-extrabold px-5 py-2.5 rounded-xl border-2 border-gray-700 hover:border-lime text-sm whitespace-nowrap">
-        🍊 EXCLUSIVO
-      </button>
-      <button onclick="filterMenu('sammy')" class="menu-tab bg-darkCard text-white font-extrabold px-5 py-2.5 rounded-xl border-2 border-gray-700 hover:border-lime text-sm whitespace-nowrap">
-        ⭐ SAMMY ESPECIAL
-      </button>
-    </div>
-
-    <!-- Cards Grid -->
-    <div class="grid md:grid-cols-3 gap-6" id="combos-grid">
-      
-      <!-- Combo 1 -->
-      <div class="combo-card mexican bg-darkCard border-2 border-orange rounded-3xl p-6 relative overflow-hidden shadow-neo-orange hover:-translate-y-2 transition-all">
-        <div class="absolute -right-8 -top-8 bg-orange text-black font-anton px-8 py-4 rotate-45 text-sm">
-          POPULAR
-        </div>
-        <span class="bg-orange/20 text-orange font-extrabold px-3 py-1 rounded-full text-xs border border-orange/40">
-          🌶️ ÁCIDO + PICANTE
-        </span>
-        <h3 class="font-anton text-3xl text-lime mt-4 mb-2">EL MEXICANO</h3>
-        <p class="text-xs text-gray-400 mb-4">Inspirado en la botana mexicana más auténtica.</p>
-        <ul class="space-y-2 text-sm text-gray-300 mb-6">
-          <li class="flex items-center gap-2">✨ Helado Cremoso a elección</li>
-          <li class="flex items-center gap-2">🫐 Popping Boba Blueberry</li>
-          <li class="flex items-center gap-2">🌶️ Chamoy + Tajín concentrado</li>
-          <li class="flex items-center gap-2">🇲🇽 Pulparindo + Rellenitos</li>
-        </ul>
-        <div class="bg-black/50 p-3 rounded-xl mb-6 border border-gray-800 text-xs text-yellow font-bold">
-          🎁 Incluye: 2 Dulces Mexicanos a tu gusto.
-        </div>
-        <a href="https://wa.me/573163895608?text=Hola%20Picgelato%2C%20quiero%20pedir%20el%20combo%20EL%20MEXICANO." target="_blank" class="block text-center bg-orange hover:bg-orange/90 text-black font-extrabold py-3 rounded-xl border-2 border-black shadow-neo-lime transition-all">
-          PEDIR ESTE COMBO 📲
-        </a>
-      </div>
-
-      <!-- Combo 2 -->
-      <div class="combo-card exclusivo bg-darkCard border-2 border-lime rounded-3xl p-6 relative overflow-hidden shadow-neo-lime hover:-translate-y-2 transition-all">
-        <span class="bg-lime/20 text-lime font-extrabold px-3 py-1 rounded-full text-xs border border-lime/40">
-          💥 EXPLOSIÓN ÁCIDA
-        </span>
-        <h3 class="font-anton text-3xl text-yellow mt-4 mb-2">EL EXCLUSIVO</h3>
-        <p class="text-xs text-gray-400 mb-4">El equilibrio perfecto de acidez y textura chispeante.</p>
-        <ul class="space-y-2 text-sm text-gray-300 mb-6">
-          <li class="flex items-center gap-2">✨ Helado Frutal a elección</li>
-          <li class="flex items-center gap-2">🥭 Popping Boba Mango Biche</li>
-          <li class="flex items-center gap-2">🍬 Gomitas ácidas surtidas</li>
-          <li class="flex items-center gap-2">⚡ Chamoy, Tajín y Polvo Revolcón</li>
-        </ul>
-        <div class="bg-black/50 p-3 rounded-xl mb-6 border border-gray-800 text-xs text-lime font-bold">
-          🎁 Incluye: 1 Dulce Mexicano favorito.
-        </div>
-        <a href="https://wa.me/573163895608?text=Hola%20Picgelato%2C%20quiero%20pedir%20el%20combo%20EL%20EXCLUSIVO." target="_blank" class="block text-center bg-lime hover:bg-lime/90 text-black font-extrabold py-3 rounded-xl border-2 border-black shadow-neo-orange transition-all">
-          PEDIR ESTE COMBO 📲
-        </a>
-      </div>
-
-      <!-- Combo 3 -->
-      <div class="combo-card sammy bg-darkCard border-2 border-yellow rounded-3xl p-6 relative overflow-hidden shadow-neo-yellow hover:-translate-y-2 transition-all">
-        <span class="bg-yellow/20 text-yellow font-extrabold px-3 py-1 rounded-full text-xs border border-yellow/40">
-          👑 EL MÁS COMPLETO
-        </span>
-        <h3 class="font-anton text-3xl text-orange mt-4 mb-2">SAMMY ESPECIAL</h3>
-        <p class="text-xs text-gray-400 mb-4">La experiencia Picgelato definitiva con todo incluido.</p>
-        <ul class="space-y-2 text-sm text-gray-300 mb-6">
-          <li class="flex items-center gap-2">✨ 2 Bolas de Helado a elección</li>
-          <li class="flex items-center gap-2">🌈 Mezcla de 3 Popping Bobas</li>
-          <li class="flex items-center gap-2">🍬 Gomitas + Polvo Revolcón</li>
-          <li class="flex items-center gap-2">🍭 BonBon Boom Tajín Exclusivo</li>
-        </ul>
-        <div class="bg-black/50 p-3 rounded-xl mb-6 border border-gray-800 text-xs text-orange font-bold">
-          🔥 Recomendado para amantes del picante extremo.
-        </div>
-        <a href="https://wa.me/573163895608?text=Hola%20Picgelato%2C%20quiero%20pedir%20el%20combo%20SAMMY%20ESPECIAL." target="_blank" class="block text-center bg-yellow hover:bg-yellow/90 text-black font-extrabold py-3 rounded-xl border-2 border-black shadow-neo-lime transition-all">
-          PEDIR ESTE COMBO 📲
-        </a>
-      </div>
-
+    <div class="info-box">
+      <h3>⚡ NUESTRA IDEA</h3>
+      <p>Picgelato es un emprendimiento joven que busca ofrecer una experiencia diferente: helado, acidez, dulces y mucha diversión en una sola combinación.</p>
     </div>
   </div>
 </section>
 
-<section class="py-16 bg-black border-b-4 border-lime">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="text-center mb-12">
-      <span class="text-yellow font-black uppercase tracking-widest text-sm bg-yellow/10 px-4 py-1.5 rounded-full border border-yellow/30">
-        100% Frescura Frutal
-      </span>
-      <h2 class="font-anton text-4xl sm:text-6xl text-lime mt-3">SABORES Y POPPING BOBA 🍉</h2>
+<section>
+  <div class="contact">
+    <h2>¿TE ATREVES? ⚡</h2>
+    <p>Haz tu pedido durante la preventa.</p>
+    <div class="number">📲 316 389 5608</div>
+    <p>WhatsApp • <strong>Nequi: 316 389 5608</strong></p>
+    <div class="cta-row" style="justify-content:center">
+      <a class="btn btn-primary" href="https://wa.me/573163895608?text=Hola%20Picgelato%2C%20quiero%20hacer%20una%20preventa." target="_blank">Escribir por WhatsApp</a>
+      <a class="btn btn-secondary" href="https://www.instagram.com/picgelato/" target="_blank">📸 @Picgelato</a>
     </div>
-
-    <!-- Ice Cream Flavors Grid -->
-    <h3 class="font-anton text-2xl text-orange mb-6 flex items-center gap-2">
-      <span>🍦</span> SABORES DE HELADO
-    </h3>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-      <div class="bg-darkCard border-2 border-lime/40 rounded-2xl p-5 text-center hover:border-lime transition-all hover:scale-105">
-        <div class="text-5xl mb-3">🍈</div>
-        <h4 class="font-anton text-xl text-white">LULO SOUR</h4>
-        <p class="text-xs text-gray-400 mt-1">Cremoso, fresco y con acidez cítrica natural.</p>
-      </div>
-      <div class="bg-darkCard border-2 border-orange/40 rounded-2xl p-5 text-center hover:border-orange transition-all hover:scale-105">
-        <div class="text-5xl mb-3">🥭</div>
-        <h4 class="font-anton text-xl text-white">MARACUYÁ</h4>
-        <p class="text-xs text-gray-400 mt-1">Frutal, tropical y sumamente refrescante.</p>
-      </div>
-      <div class="bg-darkCard border-2 border-yellow/40 rounded-2xl p-5 text-center hover:border-yellow transition-all hover:scale-105">
-        <div class="text-5xl mb-3">🍊</div>
-        <h4 class="font-anton text-xl text-white">NARANJA CÍTICA</h4>
-        <p class="text-xs text-gray-400 mt-1">Llena de energía y un toque dulzón único.</p>
-      </div>
-      <div class="bg-darkCard border-2 border-red/40 rounded-2xl p-5 text-center hover:border-red transition-all hover:scale-105">
-        <div class="text-5xl mb-3">🍉</div>
-        <h4 class="font-anton text-xl text-white">SANDÍA SOUR</h4>
-        <p class="text-xs text-gray-400 mt-1">Sabor veraniego con retrogusto ácido explosivo.</p>
-      </div>
-    </div>
-
-    <!-- Popping Boba Grid -->
-    <h3 class="font-anton text-2xl text-yellow mb-6 flex items-center gap-2">
-      <span>💥</span> PERLAS POPPING BOBA
-    </h3>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <div class="bg-darkCard border-2 border-purple/60 rounded-2xl p-4 text-center hover:border-lime transition-all">
-        <div class="text-4xl mb-2">🫐</div>
-        <h4 class="font-bold text-sm text-lime">BLUEBERRY</h4>
-        <p class="text-[11px] text-gray-400">Jugo concentrado dulce-ácido.</p>
-      </div>
-      <div class="bg-darkCard border-2 border-purple/60 rounded-2xl p-4 text-center hover:border-lime transition-all">
-        <div class="text-4xl mb-2">🥭</div>
-        <h4 class="font-bold text-sm text-lime">MANGO BICHE</h4>
-        <p class="text-[11px] text-gray-400">El toque verde acidito perfecto.</p>
-      </div>
-      <div class="bg-darkCard border-2 border-purple/60 rounded-2xl p-4 text-center hover:border-lime transition-all">
-        <div class="text-4xl mb-2">🍏</div>
-        <h4 class="font-bold text-sm text-lime">MANZANA VERDE</h4>
-        <p class="text-[11px] text-gray-400">Chispeante y refrescante.</p>
-      </div>
-      <div class="bg-darkCard border-2 border-purple/60 rounded-2xl p-4 text-center hover:border-lime transition-all">
-        <div class="text-4xl mb-2">🍬</div>
-        <h4 class="font-bold text-sm text-lime">GOMITAS & POLVO</h4>
-        <p class="text-[11px] text-gray-400">Gusanitos, aros y Revolcón.</p>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<section class="py-16 bg-gradient-to-b from-darkBg to-purple/20 border-b-4 border-yellow">
-  <div class="max-w-4xl mx-auto px-4 text-center">
-    
-    <div class="bg-darkCard border-4 border-lime rounded-3xl p-8 shadow-neo-orange relative overflow-hidden mb-12">
-      <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-lime/10 rounded-full blur-xl pointer-events-none"></div>
-      
-      <span class="bg-yellow text-black font-extrabold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider">
-        PRECIOS DE PREVENTA EXCLUSIVA
-      </span>
-      <h2 class="font-anton text-4xl sm:text-5xl text-white mt-3 mb-2">LISTA DE PRECIOS 🏷️</h2>
-      <p class="text-gray-400 text-sm mb-8">Válido para la Feria Empresarial (22 al 25 de Septiembre de 2026)</p>
+</main>
 
-      <div class="grid sm:grid-cols-2 gap-6">
-        <div class="bg-black/60 border-2 border-lime p-6 rounded-2xl relative">
-          <h3 class="font-anton text-2xl text-gray-300">PEQUEÑO • 1 BOLA</h3>
-          <div class="text-gray-500 line-through text-lg font-bold mt-1">$6.000</div>
-          <div class="font-anton text-5xl text-lime mt-1">$5.000</div>
-          <span class="inline-block bg-lime/20 text-lime font-bold text-xs px-3 py-1 rounded-full mt-3">Ahorras $1.000</span>
-        </div>
-
-        <div class="bg-black/60 border-2 border-orange p-6 rounded-2xl relative">
-          <h3 class="font-anton text-2xl text-gray-300">GRANDE • 2 BOLAS</h3>
-          <div class="text-gray-500 line-through text-lg font-bold mt-1">$8.000</div>
-          <div class="font-anton text-5xl text-orange mt-1">$7.000</div>
-          <span class="inline-block bg-orange/20 text-orange font-bold text-xs px-3 py-1 rounded-full mt-3">Ahorras $1.000</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Contact CTA Box -->
-    <div class="bg-gradient-to-r from-orange/20 via-purple/40 to-lime/20 border-4 border-orange rounded-3xl p-8 text-center shadow-neo-lime">
-      <h2 class="font-anton text-4xl sm:text-6xl text-white">¿TE ATREVES A PROBARLO? ⚡</h2>
-      <p class="text-gray-300 font-medium mt-2 max-w-lg mx-auto">
-        Asegura tu helado durante los días de preventa antes de que se agoten los cupos.
-      </p>
-
-      <div class="my-6">
-        <span class="block text-xs uppercase text-gray-400 font-bold tracking-widest">Contacto Directo & Nequi</span>
-        <div class="font-anton text-4xl sm:text-5xl text-lime tracking-wide mt-1">
-          📱 316 389 5608
-        </div>
-      </div>
-
-      <div class="flex flex-wrap gap-4 justify-center">
-        <a href="https://wa.me/573163895608?text=Hola%20Picgelato%2C%20quiero%20hacer%20un%20pedido%20de%20preventa." target="_blank" class="bg-lime hover:bg-lime/90 text-black font-extrabold text-lg px-8 py-4 rounded-2xl border-4 border-black shadow-neo-orange hover:-translate-y-1 transition-all">
-          📲 ESCRIBIR POR WHATSAPP
-        </a>
-        <a href="https://www.instagram.com/picgelato/" target="_blank" class="bg-black hover:bg-black/80 text-white font-extrabold text-lg px-6 py-4 rounded-2xl border-2 border-orange shadow-neo-yellow hover:-translate-y-1 transition-all flex items-center gap-2">
-          <span>📸 @picgelato</span>
-        </a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<footer class="bg-black py-8 border-t-2 border-gray-800 text-center text-gray-400 text-sm">
-  <div class="max-w-6xl mx-auto px-4 space-y-2">
-    <p class="font-anton text-2xl text-lime tracking-wider">PICGELATO ⚡</p>
-    <p>Helado entre ácido y picante • Feria Empresarial 2026</p>
-    <p class="text-xs text-gray-500">Preventa Oficial del 22 al 25 de Septiembre.</p>
+<footer>
+  <div class="container">
+    <b>@Picgelato</b> · Helado entre ácido y picante ⚡<br>
+    Feria empresarial · Preventa 22–25 de septiembre de 2026
   </div>
 </footer>
-
-<script>
-  // --- Particle Canvas Animation ---
-  const canvas = document.getElementById('particles-canvas');
-  const ctx = canvas.getContext('2d');
-  let particles = [];
-
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  window.addEventListener('resize', resizeCanvas);
-  resizeCanvas();
-
-  class Particle {
-    constructor() {
-      this.reset();
-    }
-    reset() {
-      this.x = Math.random() * canvas.width;
-      this.y = Math.random() * canvas.height;
-      this.size = Math.random() * 3 + 1;
-      this.speedY = -(Math.random() * 1 + 0.2);
-      this.speedX = (Math.random() - 0.5) * 0.5;
-      this.color = ['#c6f000', '#ff9500', '#ffd600', '#e53b2e'][Math.floor(Math.random() * 4)];
-      this.opacity = Math.random() * 0.6 + 0.2;
-    }
-    update() {
-      this.y += this.speedY;
-      this.x += this.speedX;
-      if (this.y < 0) this.reset();
-    }
-    draw() {
-      ctx.globalAlpha = this.opacity;
-      ctx.fillStyle = this.color;
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fill();
-    }
-  }
-
-  for (let i = 0; i < 40; i++) {
-    particles.push(new Particle());
-  }
-
-  function animateParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => {
-      p.update();
-      p.draw();
-    });
-    requestAnimationFrame(animateParticles);
-  }
-  animateParticles();
-
-  // --- Countdown Timer Logic ---
-  function updateCountdown() {
-    // Target date: Sept 22, 2026
-    const targetDate = new Date('September 22, 2026 00:00:00').getTime();
-    const now = new Date().getTime();
-    const difference = targetDate - now;
-
-    if (difference > 0) {
-      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-      document.getElementById('cd-days').innerText = String(days).padStart(2, '0');
-      document.getElementById('cd-hours').innerText = String(hours).padStart(2, '0');
-      document.getElementById('cd-minutes').innerText = String(minutes).padStart(2, '0');
-      document.getElementById('cd-seconds').innerText = String(seconds).padStart(2, '0');
-    } else {
-      document.getElementById('cd-days').innerText = '00';
-      document.getElementById('cd-hours').innerText = '00';
-      document.getElementById('cd-minutes').innerText = '00';
-      document.getElementById('cd-seconds').innerText = '00';
-    }
-  }
-  setInterval(updateCountdown, 1000);
-  updateCountdown();
-
-  // --- Dynamic Ice Cream Builder Logic ---
-  let selectedFlavors = [];
-
-  function handleFlavorChange(cb) {
-    const size = document.querySelector('input[name="builder-size"]:checked').value;
-    const maxAllowed = parseInt(size);
-
-    if (cb.checked) {
-      if (selectedFlavors.length >= maxAllowed) {
-        // Uncheck the earliest checked flavor
-        const firstValue = selectedFlavors.shift();
-        document.querySelectorAll('.flavor-cb').forEach(el => {
-          if (el.value === firstValue) el.checked = false;
-        });
-      }
-      selectedFlavors.push(cb.value);
-    } else {
-      selectedFlavors = selectedFlavors.filter(item => item !== cb.value);
-    }
-
-    updateBuilder();
-  }
-
-  function updateBuilder() {
-    const sizeInput = document.querySelector('input[name="builder-size"]:checked');
-    const size = sizeInput ? sizeInput.value : '1';
-    const isBig = size === '2';
-
-    // Update flavor limit note
-    const limitNote = document.getElementById('flavor-limit-note');
-    if (limitNote) {
-      limitNote.innerText = isBig ? 'Selecciona hasta 2 sabores:' : 'Selecciona 1 sabor:';
-    }
-
-    // Limit active flavors if switched back to small size
-    if (!isBig && selectedFlavors.length > 1) {
-      selectedFlavors.pop();
-      document.querySelectorAll('.flavor-cb').forEach(el => {
-        if (!selectedFlavors.includes(el.value)) el.checked = false;
-      });
-    }
-
-    // Selected Bobas
-    const bobas = [];
-    document.querySelectorAll('.boba-cb:checked').forEach(el => bobas.push(el.value));
-
-    // Selected Toppings
-    const toppings = [];
-    document.querySelectorAll('.top-cb:checked').forEach(el => toppings.push(el.value));
-
-    // Price Calculation
-    const totalPrice = isBig ? 7000 : 5000;
-
-    // Summary Elements Update
-    document.getElementById('summary-size').innerText = isBig ? 'Grande (2 Bolas)' : 'Pequeño (1 Bola)';
-    document.getElementById('summary-flavors').innerText = selectedFlavors.length > 0 ? selectedFlavors.join(', ') : 'Ninguno';
-    document.getElementById('summary-boba').innerText = bobas.length > 0 ? bobas.join(', ') : 'Sin perlas';
-    document.getElementById('summary-toppings').innerText = toppings.length > 0 ? toppings.join(', ') : 'Sin toppings';
-    document.getElementById('summary-total').innerText = '$' + totalPrice.toLocaleString('es-CO');
-
-    // Visual Scoop Graphic
-    const previewScoops = document.getElementById('preview-scoops');
-    const previewBadge = document.getElementById('preview-badge');
-    
-    if (isBig) {
-      previewScoops.innerText = '🍨🍨';
-      previewBadge.innerText = '2 Bolas Seleccionadas';
-      previewBadge.className = 'inline-block bg-orange text-black font-extrabold px-3 py-1 rounded-full text-xs shadow-md';
-    } else {
-      previewScoops.innerText = '🍨';
-      previewBadge.innerText = '1 Bola Seleccionada';
-      previewBadge.className = 'inline-block bg-lime text-black font-extrabold px-3 py-1 rounded-full text-xs shadow-md';
-    }
-  }
-
-  function sendCustomOrder() {
-    const size = document.querySelector('input[name="builder-size"]:checked').value === '2' ? 'Grande (2 Bolas - $7.000)' : 'Pequeño (1 Bola - $5.000)';
-    const flavors = selectedFlavors.length > 0 ? selectedFlavors.join(', ') : 'A elección del chef';
-    
-    const bobas = [];
-    document.querySelectorAll('.boba-cb:checked').forEach(el => bobas.push(el.value));
-    const bobaText = bobas.length > 0 ? bobas.join(', ') : 'Sin perlas';
-
-    const toppings = [];
-    document.querySelectorAll('.top-cb:checked').forEach(el => toppings.push(el.value));
-    const topText = toppings.length > 0 ? toppings.join(', ') : 'Sin adicionales';
-
-    const textMsg = `Hola Picgelato! ⚡ Quiero pedir mi helado personalizado:%0A` +
-      `- *Tamaño:* ${size}%0A` +
-      `- *Sabores:* ${flavors}%0A` +
-      `- *Popping Boba:* ${bobaText}%0A` +
-      `- *Toppings:* ${topText}`;
-
-    window.open(`https://wa.me/573163895608?text=${textMsg}`, '_blank');
-  }
-
-  // --- Menu Filter Logic ---
-  function filterMenu(category) {
-    const cards = document.querySelectorAll('.combo-card');
-    const tabs = document.querySelectorAll('.menu-tab');
-
-    tabs.forEach(tab => {
-      tab.classList.remove('bg-lime', 'text-black');
-      tab.classList.add('bg-darkCard', 'text-white');
-    });
-
-    event.currentTarget.classList.remove('bg-darkCard', 'text-white');
-    event.currentTarget.classList.add('bg-lime', 'text-black');
-
-    cards.forEach(card => {
-      if (category === 'all') {
-        card.style.display = 'block';
-      } else if (card.classList.contains(category)) {
-        card.style.display = 'block';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  }
-
-  // Initialize defaults on load
-  window.onload = function() {
-    updateBuilder();
-  };
-</script>
 </body>
 </html>
