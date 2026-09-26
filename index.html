@@ -708,29 +708,56 @@
   animateParticles();
 
   // --- Countdown Timer Logic ---
-  function updateCountdown() {
-    // Target date: Sept 22, 2026
-    const targetDate = new Date('September 22, 2026 00:00:00').getTime();
-    const now = new Date().getTime();
-    const difference = targetDate - now;
+// --- Countdown Timer Logic ---
+function updateCountdown() {
+  // La preventa termina al finalizar el lunes 28 de septiembre de 2026
+  const targetDate = new Date('September 29, 2026 00:00:00').getTime();
+  const now = new Date().getTime();
+  const difference = targetDate - now;
 
-    if (difference > 0) {
-      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+  if (difference > 0) {
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor(
+      (difference % (1000 * 60 * 60)) / (1000 * 60)
+    );
+    const seconds = Math.floor(
+      (difference % (1000 * 60)) / 1000
+    );
 
-      document.getElementById('cd-days').innerText = String(days).padStart(2, '0');
-      document.getElementById('cd-hours').innerText = String(hours).padStart(2, '0');
-      document.getElementById('cd-minutes').innerText = String(minutes).padStart(2, '0');
-      document.getElementById('cd-seconds').innerText = String(seconds).padStart(2, '0');
-    } else {
-      document.getElementById('cd-days').innerText = '00';
-      document.getElementById('cd-hours').innerText = '00';
-      document.getElementById('cd-minutes').innerText = '00';
-      document.getElementById('cd-seconds').innerText = '00';
-    }
+    document.getElementById('cd-days').innerText =
+      String(days).padStart(2, '0');
+
+    document.getElementById('cd-hours').innerText =
+      String(hours).padStart(2, '0');
+
+    document.getElementById('cd-minutes').innerText =
+      String(minutes).padStart(2, '0');
+
+    document.getElementById('cd-seconds').innerText =
+      String(seconds).padStart(2, '0');
+
+  } else {
+
+    // Mensaje cuando la preventa haya terminado
+    document.getElementById('countdown').innerHTML = `
+      <div class="bg-lime text-black rounded-xl p-5 border-4 border-black shadow-neo-orange text-center col-span-4">
+        <div class="font-anton text-3xl sm:text-4xl uppercase">
+          PREVENTA CERRADA
+        </div>
+
+        <div class="font-bold text-sm sm:text-base mt-1">
+          Muchas gracias por sus compras 💚
+        </div>
+      </div>
+    `;
   }
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
   setInterval(updateCountdown, 1000);
   updateCountdown();
 
