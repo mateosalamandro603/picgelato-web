@@ -2,7 +2,8 @@
    PICGELATO — CONFIGURACIÓN DE TAILWIND
    ========================================================= */
 
-window.tailwind = window.tailwind || {};\nwindow.tailwind.config = {
+window.tailwind = window.tailwind || {};
+window.tailwind.config = {
     theme: {
       extend: {
         colors: {
